@@ -1,0 +1,13 @@
+{%load static%}
+
+<link rel="stylesheet" type="text/css" href="{% static 'testprj/style.css' %}" />
+
+{%if test_cases_date_time_wise_list %}
+    <ul>
+    {% for test_case in test_cases_date_time_wise_list %}
+        <li style="color:green">{{ test_case.test_case_id }} {{ test_case.date_time }} {{ test_case.branch }} {{ test_case.tag }} {{test_case.result}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No testcases are available.</p>
+{% endif %}
